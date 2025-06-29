@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eduardo & Iasmini</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background-color: #fff;
+      padding: 2rem 1rem;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #B76E79;
+    }
+    .verse {
+      font-style: italic;
+      margin: 1rem auto;
+      max-width: 500px;
+    }
+    section {
+      padding: 2rem 1rem;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      color: #B76E79;
+    }
+    .info, .rsvp, .presentes {
+      margin-top: 2rem;
+    }
+    a.button {
+      display: inline-block;
+      background-color: #B76E79;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      margin: 1rem 0;
+    }
+    footer {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: #f9f9f9;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Eduardo & Iasmini</h1>
+    <p class="verse">“Assim, eles já não são dois, mas sim uma só carne. Portanto, o que Deus uniu, ninguém o separe.”<br>— Mateus 19:6</p>
+    <div class="countdown" id="countdown"></div>
+  </header>
+
+  <section class="info">
+    <h2>Informações do Casamento</h2>
+    <p><strong>Data:</strong> 07 de novembro de 2025</p>
+    <p><strong>Local:</strong> Bamboo Eventos – Monte Serrat</p>
+    <a class="button" href="https://www.google.com/maps/search/Bamboo+Eventos+Monte+Serrat" target="_blank">Ver no Mapa</a>
+  </section>
+
+  <section class="presentes">
+    <h2>Lista de Presentes</h2>
+    <p>Em breve teremos novidades aqui! 💝</p>
+  </section>
+
+  <section class="rsvp">
+    <h2>Confirme sua Presença</h2>
+    <p>Entre em contato conosco pelo WhatsApp:</p>
+    <a class="button" href="https://wa.me/5561995154296" target="_blank">Falar com Eduardo</a><br />
+    <a class="button" href="https://wa.me/5561992656462" target="_blank">Falar com Iasmini</a>
+  </section>
+
+  <footer>
+    <p>Com carinho, Eduardo & Iasmini ❤️</p>
+    <p>Nos vemos no grande dia!</p>
+  </footer>
+
+  <script>
+    const weddingDate = new Date("2025-11-07T00:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "É hoje o grande dia!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+      countdownEl.textContent = `Faltam ${days} dias, ${hours} horas e ${minutes} minutos!`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+  </script>
+</body>
+</html>
